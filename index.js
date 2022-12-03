@@ -27,7 +27,7 @@ const loopCatalogPrice = (loop) => {
   print(list);
 };
 
-let findPrice = loopCatalogPrice(catalog);
+// let findPrice = loopCatalogPrice(catalog);
 
 let cart = [];
 let r1 = require("readline");
