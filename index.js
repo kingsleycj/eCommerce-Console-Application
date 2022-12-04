@@ -27,7 +27,7 @@ const loopCatalogPrice = (loop) => {
   print(list);
 };
 
-// let findPrice = loopCatalogPrice(catalog);
+let findPrice = loopCatalogPrice(catalog);
 
 let cart = [];
 let r1 = require("readline");
@@ -105,9 +105,9 @@ prompts.question("Enter your name: ", function (username) {
                         "\n\n Thank You! " +
                         username +
                         "\n\n Your details have been stored,  You can make your payment and expect delivery in 2 day(s)" +
-                        "\n\n-------------------------------------------------" +
-                        "\n\n --------------- CHECKOUT UI ---------------";
-                      "\n\n Username              : " +
+                        "\n\n-----------------------------------------------" +
+                        "\n\n--------------- CHECKOUT UI -------------------" +
+                        "\n\n Username              : " +
                         username +
                         "\n\n Email                 : " +
                         email +
@@ -118,15 +118,15 @@ prompts.question("Enter your name: ", function (username) {
                         `\n\n Shopping Cart - ${cart}   : ` +
                         // loopCatalogPrice(catalog)
                         "\n\n Total                 : " +
-                        "\n\n Thank you for using our shopping platform" +
-                        "\n\n-------------------------------------------------";
+                        "\n\n-- Thank you for using my shopping platform --" +
+                        "\n\n-----------------------------------------------";
                     } else {
                       message =
                         "Your Phone number is " +
                         mobile +
                         " , and its not up to 11 digits, please restart and input 11  digits of your phone number ";
                     }
-                    console.log(message);
+                    print(message);
                   }
                 );
               }
