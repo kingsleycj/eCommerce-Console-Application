@@ -1,3 +1,4 @@
+// List of Available Phones in my inventory
 const catalog = [
   ["iphone 11", 320],
   ["samsung galaxy s10", 250],
@@ -6,10 +7,12 @@ const catalog = [
   ["lg nexus", 220],
 ];
 
+// a function to replace the use of console.log to log out to the console
 const print = (message) => {
   console.log(message);
 };
 
+// a function  to create a list of the inventory and prices
 const printList = (items) => {
   let list = "\n***************************************\n";
   for (let i = 0; i < items.length; i++) {
@@ -19,6 +22,8 @@ const printList = (items) => {
   print(list);
 };
 
+// UNCOMPLETED: a fuunction to loop through the prices in the inventory "catalog"
+/*
 const loopCatalogPrice = (loop) => {
   let list = [];
   for (let i = 0; i < loop.length; i++) {
@@ -26,15 +31,19 @@ const loopCatalogPrice = (loop) => {
   }
   print(list);
 };
+*/
 
-// let findPrice = loopCatalogPrice(catalog);
-
+//  an empty array created to store the items added to cart
 let cart = [];
-let r1 = require("readline");
-let prompts = r1.createInterface({
+
+// a readline interface to contain the events intended to accept input
+// from a user and store it in a callback fuunction
+let readline = require("readline");
+let prompts = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
 prompts.question("Enter your name: ", function (username) {
   print(`Hi ${username}, Welcome to Kingsley\'s store`);
   print(`\nHere are the list and prices of our Phone Catalog: `);
@@ -44,7 +53,7 @@ prompts.question("Enter your name: ", function (username) {
     function (selectedItem) {
       if (catalog[0].includes(selectedItem)) {
         print(`${selectedItem} has been added to the shopping cart\n`);
-        cart.push(selectedItem);
+        cart.push(selectedItem); 
         print("Your shopping cart : \n " + cart);
       } else if (catalog[1].includes(selectedItem)) {
         print(`${selectedItem} has been added to the shopping cart\n`);
@@ -99,8 +108,8 @@ prompts.question("Enter your name: ", function (username) {
                 prompts.question(
                   "Enter your Phone Number\n(make sure its 11 digits): ",
                   function (mobile) {
-                    let message = "";
-                    if (mobile.length >= 10) {
+                    let message = "";  // a variable to store the UI display of the checkout section
+                    if (mobile.length = 10) {
                       message =
                         "\n\n Thank You! " +
                         username +
@@ -124,7 +133,7 @@ prompts.question("Enter your name: ", function (username) {
                       message =
                         "Your Phone number is " +
                         mobile +
-                        " , and its not up to 11 digits, please restart and input 11  digits of your phone number ";
+                        " , and its not up to 11 digits, please restart and input 11 digits of your phone number ";
                     }
                     print(message);
                   }
